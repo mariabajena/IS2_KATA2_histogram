@@ -10,8 +10,8 @@ public class Main {
     
     Map<Integer,Integer> histogram = new HashMap<>();
     
-        for (int i = 0; i < data.length; i++) {
-            histogram.put(data[i], histogram.getOrDefault(data[i], 0)+1);
+        for (int key : data) {
+            histogram.put(key, histogram.containsKey(key) ? histogram.get(key) + 1 : 1);
         }
         
         for (Integer key : histogram.keySet()) {
